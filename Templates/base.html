@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Static/style.css" type="text/css">
     <title>Recipe Shack</title>
 </head>
 <body>
@@ -11,7 +12,7 @@
         <nav>
             <div class="nav-wrapper">
                 <a href="{{url_for('Home_page')}}" class="brand-logo">Recipe Shack</a>
-                <ul id="nav">
+                <ul class="nav">
                     <li><a href="{{url_for('home_page')}}">Home</a></li>
                     <li><a href="{{url_for('recent_recipies')}}">Recently Added Recipes</a></li>
                     <li><a href="{{url_for('recipe_categories')}}">Recipe Categories</a></li>
