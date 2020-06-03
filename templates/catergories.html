@@ -5,7 +5,73 @@
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-4">Catergories</h1>
-    <p class="lead">Choose from our selected meals by either: Meal classification or Country of Origin.</p>
+    <p class="lead">Please select a category to help find your next favourite  dish!</p>
+  </div>
+</div>
+<!-- creates a deck formation allowing the cards to align perfectly with each other (Bootstrap)-->
+<div class="row row-cols-1 row-cols-md-3">
+  <!-- here is the code for each individual card in the card deck container.-->
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{{url_for('static', filename='images/cooked-full-english.jpg')}}" class="card-img-top" alt="breakfast">
+      <div class="card-body">
+        <h5 class="card-title">Breakfast</h5>
+        <a href="#" class="btn btn-primary">Select</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{{url_for('static', filename='images/lunch2.jpg')}}" class="card-img-top" alt="lunch">
+      <div class="card-body">
+        <h5 class="card-title">Lunch</h5>
+        <a href="#" class="btn btn-primary">Select</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{{url_for('static', filename='images/Dinner.jpg')}}" class="card-img-top" alt="dinner">
+      <div class="card-body">
+        <h5 class="card-title">Dinner</h5>
+        <a href="#" class="btn btn-primary">Select</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{{url_for('static', filename='images/eu-flag.jpg')}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">European</h5>
+        
+        <a href="#" class="btn btn-primary">Select</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col mb-4">
+    <div class="card">
+      <img src="{{url_for('static', filename='images/china-flag-medium.jpg')}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Chinese</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <a href="#" class="btn btn-primary">Select</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col mb-4">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}

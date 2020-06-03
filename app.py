@@ -11,7 +11,7 @@ def homepage():
     return render_template("home.html")
 
 @app.route("/catergories")
-def homepage():
+def catergories():
     return render_template("catergories.html")
 
 if __name__ == "__main__":
