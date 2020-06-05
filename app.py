@@ -1,11 +1,16 @@
-from flask import Flask, redirect, url_for, render_template
+import os
+from flask import Flask, redirect, url_for, render_template, request
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
 
-@app.route("/")
-def home():
-    return render_template("home.html")
+app.config['MONGO_DBNAME'] = 'recipe-shack'
 
+app.config['MONGO_URI'] = 'mongodb+srv://root:EEB4A90F66@jaicluster-9bnub.mongodb.net/recipe-shack?retryWrites=true&w=majority'
+
+mongo = PyMongo(app)
+
+@app.route("/")
 @app.route("/home")
 def homepage():
     return render_template("home.html")
