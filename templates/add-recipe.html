@@ -10,20 +10,46 @@
 </div>
 <!-- Start of inout form -->
 <form>
-  <div class="form-group" style="max-width: 50vw; margin-left: 25vw;">
+
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="recipe-name">Recipe Name:</label>
     <input type="text" class="form-control" id="recipe-name" placeholder="Example: Sticky toffe pudding!">
   </div>
-  <div class="form-group" style="max-width: 50vw; margin-left: 25vw;">
+
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="national-category">Dish Nationailty:</label>
     <input type="text" class="form-control" id="national-category" placeholder="Example: Italian, Indian, Thai">
   </div>
-  <div class="form-group" style="max-width: 50vw; margin-left: 25vw;">
+  
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="meal-catergory">Meal Category</label>
     <select class="form-control" id="meal-category">
+      <option>Please select one option...</option>
       <option>Breakfast</option>
       <option>Lunch</option>
       <option>Dinner</option>
     </select>
   </div>
+
+  <form>
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="upload-recipe-photo" style="margin-bottom: 20px;">Please choose a delicious image of your chosen recipe!</label>
+    <input type="file" class="form-control-file" id="upload-recipe-photo">
+  </div>
+
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="ingredients">Ingredients:</label>
+    <input type="text" class="form-control" id="ingredients" placeholder="Please tell us what yummy foods are in your dish!">
+  </div>
+
+  
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="instructions">Instructions</label>
+    <input type="text" class="form-control" id="instructions" placeholder="Please tell us how to make your dish">
+  </div>
+
+  <button class="btn btn-primary" type="submit" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">Submit form</button>
+
 </form>
+
+{% endblock %}
