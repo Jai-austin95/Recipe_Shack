@@ -18,5 +18,10 @@ def catergories():
 def recipe():
     return render_template("recipe.html")
 
+@app.route("/add-recipe")
+def addrecipe():
+    return render_template("add-recipe.html")
+
+
 if __name__ == "__main__":
     app.run(debug=True)
