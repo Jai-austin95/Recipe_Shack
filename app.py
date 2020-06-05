@@ -14,5 +14,9 @@ def homepage():
 def catergories():
     return render_template("catergories.html")
 
+@app.route("/recipe/id")
+def recipe():
+    return render_template("recipe.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
