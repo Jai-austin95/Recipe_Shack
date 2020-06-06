@@ -7,7 +7,7 @@ if path.exists("env.py"):
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'recipe-shack'
+app.config["MONGO_DBNAME"] = 'DB_NAME'
 
 app.config["MONGO_URI"] = 'SECRETKEY'
 
