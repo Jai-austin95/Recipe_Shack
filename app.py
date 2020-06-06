@@ -1,15 +1,15 @@
 import os
-from flask import Flask, redirect, url_for, render_template, request
+from flask import Flask, render_template, url_for, redirect
 from flask_pymongo import PyMongo
-from os import path
-if path.exists("env.py"):
-  import env
+
+if os.path.exists("env.py"):
+    import env
 
 app = Flask(__name__)
 
-app.config["MONGO_DBNAME"] = 'DB_NAME'
-
-app.config["MONGO_URI"] = 'SECRETKEY'
+app.config["MONGO_DBNAME"] = os.environ.get("NONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
@@ -32,4 +32,6 @@ def addrecipe():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT')),
+            debug=True)
