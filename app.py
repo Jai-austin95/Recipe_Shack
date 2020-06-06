@@ -24,11 +24,16 @@ def catergories():
 
 @app.route("/recipe/id")
 def recipe():
-    return render_template("recipe.html")
+    return render_template("recipe.html", recipe=mongo.db.recipes.find())
 
 @app.route("/add-recipe")
 def addrecipe():
     return render_template("add-recipe.html")
+
+@app.route("/test")
+def test():
+    return render_template("test.html", recipe=mongo.db.recipes.find())
+
 
 
 if __name__ == "__main__":
