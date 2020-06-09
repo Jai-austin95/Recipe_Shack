@@ -22,8 +22,9 @@ def homepage():
 def catergories():
     return render_template("catergories.html")
 
-@app.route("/recipe/id")
-def recipe():
+@app.route("/recipe/<id>")
+def recipe(id=None):
+    print(id)
     return render_template("recipe.html", recipe=mongo.db.recipes.find())
 
 @app.route("/add-recipe")
@@ -32,7 +33,9 @@ def addrecipe():
 
 @app.route("/test")
 def test():
-    return render_template("test.html", recipe=mongo.db.recipes.find())
+    recipes = mongo.db.recipes.find()
+    print(recipes)
+    return render_template("test.html", recipes = recipes)
 
 
 
