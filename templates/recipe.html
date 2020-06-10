@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 {% block title %} Recipe Shack | Recipe {% endblock %}
 {% block content %}
+{% for recipe in recipes %}
 <div class="card mb-3">
-  <img src="..." class="card-img-top" alt="...">
+  <img src="{{recipe.image}}" class="card-img-top" alt="image">
   <div class="card-body">
-    <h1 class="card-title">~~ Recipe ~~</h1>
-    <p>Country of Origin: ~ origin ~</p> <p> Meal catergory: ~ meal type ~</p>
-    <p class="card-text">~~ Recipe Description ~~</p>
+    <h1 class="card-title">{{recipe.name}}</h1>
     <ul class="list-group list-group-flush">
-    <li class="list-group-item"><h6>Preperation time:</h6><p>~~ prep time ~~</p></li>
-    <li class="list-group-item"><h6>Cooking time:</h6><p>~~ cooking time ~~</p></li>
-    <li class="list-group-item"><h6>Ingredients:</h6><p>~~ ingredients ~~</p></li>
-    <li class="list-group-item"><h6>Instructions:</h6><p>~~ instructions ~~</p></li>
+    <li class="list-group-item"><h6>Type of Meal</h6><p>{{recipe.typemeal}}</p></li>
+    <li class="list-group-item"><h6>Description:</h6><p>{{recipe.smalldescription}}</p></li>
+    <li class="list-group-item"><h6>Preperation time:</h6><p>{{recipe.preperationtime}}</p></li>
+    <li class="list-group-item"><h6>Cooking time:</h6><p>{{recipe.cookingtime}}</p></li>
+    <li class="list-group-item"><h6>Ingredients:</h6><p>{{recipe.ingredients}}</p></li>
+    <li class="list-group-item"><h6>Instructions:</h6><p>{{recipe.preperations}}</p></li>
   </ul>
   </div>
 </div>
+{% endfor %}
 {% endblock %}
