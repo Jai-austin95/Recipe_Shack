@@ -70,20 +70,21 @@ def edit_recipe(recipe_id):
     categories = list(mongo.db.Categories.find())
     return render_template("edit_recipe.html", edit=edit_recipe, categories = categories)
 
-@app.route("/update_reciprecipe_id>", methods=['POST'])
+@app.route("/update_recipe/<recipe_id>", methods=['POST'])
 def update_recipe(recipe_id):
-    recipes = mongodb.recipes
-    recipes.update({'_id': ObjectId(recipe_id)}
+    recipes = mongo.db.recipes
+    recipes.update({'_id': ObjectId(recipe_id)},
     {
-        'name':request.form.get('name'),
-        'smalldescription':request.form.get('smalldescription'),
-        'mealtype':request.form.get('mealtype'),
+        'name': request.form.get('name'),
+        'smalldescription': request.form.get('smalldescription'),
+        'mealtype': request.form.get('mealtype'),
         'image': request.form.get('image'),
         'preperationtime': request.form.get('preperationtime'),
-        'cookingtime':request.form.get('cookingtime')
+        'cookingtime': request.form.get('cookingtime'),
         'ingredients': request.form.get('ingredients'),
         'preperations':request.form.get('preperations')
     })
+    return redirect(url_for('homepage'))
     
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
