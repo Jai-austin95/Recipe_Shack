@@ -13,48 +13,52 @@
 
   <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="recipename">Recipe Name:</label>
-    <input type="text" class="form-control" name="name" id="name" placeholder="Example: Sticky toffe pudding!">
+    <input type="text" class="form-control" name="name" id="name" placeholder="Example: Sticky toffe pudding!" value="{{edit.name}}">
   </div>
 
   <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="smalldescription">A Small Description:</label>
-    <input type="text" class="form-control" name="smalldescription" id="smalldescription" placeholder="Tell us about the dish!">
+    <input type="text" class="form-control" name="smalldescription" id="smalldescription" placeholder="Tell us about the dish!" value="{{edit.smalldescription}}">
   </div>
   
   <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="typemeal">Meal Category</label>
     <select class="form-control" name="typemeal" id="meal-category">
       <option value="" disabled selected>Please select one option...</option>
-      {% for categories in categories %}
-         <option value="{{categories.typemeal}}">{{categories.typemeal}}</option>
+      {% for category in categories %}
+          {% if category.typemeal == edit.typemeal %}
+              <option value="{{category.typemeal}}" selected>{{category.typemeal}}</option>
+          {% else %}
+              <option value="{{category.typemeal}}">{{category.typemeal}}</option>
+          {% endif %}
       {% endfor %}
     </select>
   </div>
   
   <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="image">Image URL:</label>
-    <input type="text" class="form-control" name="image" id="image" placeholder="https://imageofyourchoice.jpg">
+    <input type="text" class="form-control" name="image" id="image" placeholder="https://imageofyourchoice.jpg" value="{{edit.image}}">
   </div>
 
   <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="preperationtime">Preperation Time (mins):</label>
-    <input type="text" class="form-control" id="preperationtime" name="preperationtime" placeholder="How longs the prep?">
+    <input type="text" class="form-control" id="preperationtime" name="preperationtime" placeholder="How longs the prep?" value="{{edit.preperationtime}}">
   </div>
 
   <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="cookingtime">Cooking Time (mins):</label>
-    <input type="text" class="form-control" id="cookingtime" name="cookingtime" placeholder="How long shall we cook it for?">
+    <input type="text" class="form-control" id="cookingtime" name="cookingtime" placeholder="How long shall we cook it for?" value="{{edit.cookingtime}}">
   </div>
 
   <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="ingredients">Ingredients:</label>
-    <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Please tell us what yummy foods are in your dish!">
+    <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Please tell us what yummy foods are in your dish!" value="{{edit.ingredients}}">
   </div>
 
   
   <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
     <label for="preperations">Instructions</label>
-    <input type="text" class="form-control" id="preperations" name="preperations" placeholder="Please tell us how to make your dish">
+    <input type="text" class="form-control" id="preperations" name="preperations" placeholder="Please tell us how to make your dish" value="{{edit.preperations}}">
   </div>
 
   <button class="btn btn-primary" type="submit" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">Submit form</button>

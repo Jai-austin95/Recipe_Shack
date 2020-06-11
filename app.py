@@ -30,19 +30,19 @@ def breakfast():
     return render_template("breakfast.html", recipes = recipes)
 
 @app.route("/catergories/lunch")
-def breakfast():
+def lunch():
     recipes = mongo.db.recipes.find()
     print(recipes)
     return render_template("lunch.html", recipes = recipes)
 
 @app.route("/catergories/dinner")
-def breakfast():
+def dinner():
     recipes = mongo.db.recipes.find()
     print(recipes)
     return render_template("dinner.html", recipes = recipes)
    
 
-@app.route("/recipe/<_id>")
+@app.route("/recipe/<id>")
 def recipe(id=None):
     print(id)
     return render_template("recipe.html", recipes = mongo.db.recipes.find())
@@ -67,8 +67,8 @@ def insert_recipe():
 @app.route("/edit_recipe/<recipe_id>")
 def edit_recipe(recipe_id):
     edit_recipe = mongo.db.recipes.find_one({"_id": ObjectId()})
-    all_catergories = mongo.db.Categories.find()
-    return render_template("edit_recipe.html", edit=edit_recipe, catergories=all_catergories)
+    categories = list(mongo.db.Categories.find())
+    return render_template("edit_recipe.html", edit=edit_recipe, categories = categories)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
