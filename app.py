@@ -70,7 +70,7 @@ def edit_recipe(recipe_id):
     categories = list(mongo.db.Categories.find())
     return render_template("edit_recipe.html", edit=edit_recipe, categories = categories)
 
-@app.route("/update_reciprecipe_id>"e/<, methods=['POST'])
+@app.route("/update_reciprecipe_id>", methods=['POST'])
 def update_recipe(recipe_id):
     recipes = mongodb.recipes
     recipes.update({'_id': ObjectId(recipe_id)}
