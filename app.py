@@ -22,6 +22,13 @@ def homepage():
 def catergories():
     return render_template("catergories.html")
 
+@app.route("/catergories/breakfast")
+def breakfast():
+    recipes = mongo.db.recipes.find()
+    print(recipes)
+    return render_template("breakfast.html", recipes = recipes)
+   
+
 @app.route("/recipe/<id>")
 def recipe(id=None):
     print(id)
