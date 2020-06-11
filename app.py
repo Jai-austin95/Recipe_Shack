@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, url_for, redirect, request
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
 
 if os.path.exists("env.py"):
     import env
@@ -41,7 +42,7 @@ def breakfast():
     return render_template("dinner.html", recipes = recipes)
    
 
-@app.route("/recipe/<id>")
+@app.route("/recipe/<_id>")
 def recipe(id=None):
     print(id)
     return render_template("recipe.html", recipes = mongo.db.recipes.find())
@@ -62,6 +63,12 @@ def insert_recipe():
     recipes = mongo.db.recipes
     recipes.insert_one(request.form.to_dict())
     return redirect(url_for('homepage'))
+
+@app.route("/edit_recipe/<recipe_id>")
+def edit_recipe(recipe_id):
+    edit_recipe = mongo.db.recipes.find_one({"_id": ObjectId()})
+    all_catergories = mongo.db.Categories.find()
+    return render_template("edit_recipe.html", edit=edit_recipe, catergories=all_catergories)
 
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),

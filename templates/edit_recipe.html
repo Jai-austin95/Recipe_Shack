@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %} Recipe Shack | Catergories {% endblock %}
+{% block content %}
+<!-- Catergories Title -->
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Edit  Recipe!</h1>
+    <p class="lead">Please edit where you see fit!</p>
+  </div>
+</div>
+<!-- Start of input form -->
+<form action="{{ url_for('insert_recipe') }}" method="POST" >
+
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="recipename">Recipe Name:</label>
+    <input type="text" class="form-control" name="name" id="name" placeholder="Example: Sticky toffe pudding!">
+  </div>
+
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="smalldescription">A Small Description:</label>
+    <input type="text" class="form-control" name="smalldescription" id="smalldescription" placeholder="Tell us about the dish!">
+  </div>
+  
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="typemeal">Meal Category</label>
+    <select class="form-control" name="typemeal" id="meal-category">
+      <option value="" disabled selected>Please select one option...</option>
+      {% for categories in categories %}
+         <option value="{{categories.typemeal}}">{{categories.typemeal}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="image">Image URL:</label>
+    <input type="text" class="form-control" name="image" id="image" placeholder="https://imageofyourchoice.jpg">
+  </div>
+
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="preperationtime">Preperation Time (mins):</label>
+    <input type="text" class="form-control" id="preperationtime" name="preperationtime" placeholder="How longs the prep?">
+  </div>
+
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="cookingtime">Cooking Time (mins):</label>
+    <input type="text" class="form-control" id="cookingtime" name="cookingtime" placeholder="How long shall we cook it for?">
+  </div>
+
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="ingredients">Ingredients:</label>
+    <input type="text" class="form-control" id="ingredients" name="ingredients" placeholder="Please tell us what yummy foods are in your dish!">
+  </div>
+
+  
+  <div class="form-group" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">
+    <label for="preperations">Instructions</label>
+    <input type="text" class="form-control" id="preperations" name="preperations" placeholder="Please tell us how to make your dish">
+  </div>
+
+  <button class="btn btn-primary" type="submit" style="max-width: 50vw; margin-left: 25vw; margin-bottom: 35px;">Submit form</button>
+
+</form>
+
+{% endblock %}
