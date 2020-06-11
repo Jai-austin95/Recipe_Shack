@@ -27,6 +27,18 @@ def breakfast():
     recipes = mongo.db.recipes.find()
     print(recipes)
     return render_template("breakfast.html", recipes = recipes)
+
+@app.route("/catergories/lunch")
+def breakfast():
+    recipes = mongo.db.recipes.find()
+    print(recipes)
+    return render_template("lunch.html", recipes = recipes)
+
+@app.route("/catergories/dinner")
+def breakfast():
+    recipes = mongo.db.recipes.find()
+    print(recipes)
+    return render_template("dinner.html", recipes = recipes)
    
 
 @app.route("/recipe/<id>")
