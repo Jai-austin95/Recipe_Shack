@@ -8,11 +8,11 @@
 </div>
 
 <!-- creates a deck formation allowing the cards to align perfectly with each other (Bootgit pushstrap)-->
- <div class="row row-cols-1 row-cols-md-4">
+ <div class="card-deck">
  {% for recipe in recipes %}
   <!-- here is the code for each individual card in the card deck container.-->
    <div class="col mb-3">
-     <div class="card">
+     <div class="card h-100">
        <img src="{{recipe.image}}" class="card-img-top" alt="image">
        <div class="card-body">
          <h5 class="card-title">{{recipe.name}}</h5>
