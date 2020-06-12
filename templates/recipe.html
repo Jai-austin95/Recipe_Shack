@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block title %} Recipe Shack | Recipe {% endblock %}
 {% block content %}
-{% for recipe in recipes %}
 <div class="card mb-3">
+
   <img src="{{recipe.image}}" class="card-img-top" alt="image">
   <div class="card-body">
     <h1 class="card-title">{{recipe.name}}</h1>
@@ -13,10 +13,9 @@
     <li class="list-group-item"><h6>Cooking time (mins):</h6><p>{{recipe.cookingtime}}</p></li>
     <li class="list-group-item"><h6>Ingredients:</h6><p>{{recipe.ingredients}}</p></li>
     <li class="list-group-item"><h6>Instructions:</h6><p>{{recipe.preperations}}</p></li>
-    <li class="list-group-item"><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"> <button class="btn btn-primary" type="link">Edit recipe</button></a><button class="btn btn-danger" type="" style="margin-left: 20px;">Delete Recipe</button></li>
+    <li class="list-group-item"><a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"> <button class="btn btn-primary" type="link">Edit recipe</button></a><a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}"><button class="btn btn-danger" type="" style="margin-left: 20px;">Delete Recipe</button></a></li>
 
   </ul>
   </div>
 </div>
-{% endfor %}
 {% endblock %}

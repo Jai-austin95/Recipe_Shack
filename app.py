@@ -26,26 +26,23 @@ def catergories():
 
 @app.route("/catergories/breakfast")
 def breakfast():
-    recipes = mongo.db.recipes.find({'typemeal': 'breakfast'})
+    recipes = mongo.db.recipes.find({'typemeal': 'Breakfast'})
     return render_template("breakfast.html", recipes=recipes)
 
 @app.route("/catergories/lunch")
 def lunch():
-    recipes = mongo.db.recipes.find()
-    print(recipes)
-    return render_template("lunch.html", recipes = recipes)
+    recipes = mongo.db.recipes.find({'typemeal': 'Lunch'})
+    return render_template("lunch.html", recipes=recipes)
 
 @app.route("/catergories/dinner")
 def dinner():
-    recipes = mongo.db.recipes.find()
-    print(recipes)
-    return render_template("dinner.html", recipes = recipes)
-   
+    recipes = mongo.db.recipes.find({'typemeal': 'Dinner'})
+    return render_template("dinner.html", recipes=recipes)
 
-@app.route("/recipe/<id>")
-def recipe(id=None):
-    print(id)
-    return render_template("recipe.html", recipes = mongo.db.recipes.find())
+@app.route("/recipe/<recipe_id>")
+def recipe(recipe_id):
+    recipes = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html", recipe=recipes)
 
 @app.route("/add-recipe")
 def addrecipe():
@@ -77,7 +74,7 @@ def update_recipe(recipe_id):
     {
         'name': request.form.get('name'),
         'smalldescription': request.form.get('smalldescription'),
-        'mealtype': request.form.get('mealtype'),
+        'typemeal': request.form.get('typemeal'),
         'image': request.form.get('image'),
         'preperationtime': request.form.get('preperationtime'),
         'cookingtime': request.form.get('cookingtime'),
@@ -85,7 +82,13 @@ def update_recipe(recipe_id):
         'preperations':request.form.get('preperations')
     })
     return redirect(url_for('homepage'))
-    
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
+    return redirect(url_for('homepage'))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
