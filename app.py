@@ -14,6 +14,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/home")
 def homepage():
@@ -25,9 +26,8 @@ def catergories():
 
 @app.route("/catergories/breakfast")
 def breakfast():
-    recipes = mongo.db.recipes.find()
-    print(recipes)
-    return render_template("breakfast.html", recipes = recipes)
+    recipes = mongo.db.recipes.find({'typemeal': 'breakfast'})
+    return render_template("breakfast.html", recipes=recipes)
 
 @app.route("/catergories/lunch")
 def lunch():

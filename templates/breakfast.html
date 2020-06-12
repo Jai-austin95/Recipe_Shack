@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} 
+{% block title %}Recipe Shack | Breakfast{% endblock %}
+{% block content %}
 <!-- Catergories Title -->
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
@@ -6,19 +8,21 @@
     <p class="lead">Please select a recipe from our collection</p>
   </div>
 </div>
+{% for recipe in recipes %}
 <!-- creates a deck formation allowing the cards to align perfectly with each other (Bootgit pushstrap)-->
 <div class="row row-cols-1 row-cols-md-3">
   <!-- here is the code for each individual card in the card deck container.-->
   <div class="col mb-4">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="{{recipe.image}}" class="card-img-top" alt="image">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <h5 class="card-title">{{recipe.name}}</h5>
+        <p class="card-text">{{recipe.smalldescription}}</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
   
 </div>
+{% endfor %}
 {% endblock %}
