@@ -13,15 +13,17 @@
  <div class="row row-cols-1 row-cols-md-4 row-cols-sm-4">
  {% for recipe in recipes %}
   <!-- here is the code for each individual card in the card deck container.-->
+  <a href="{{url_for('recipe', recipe_id=recipe._id)}}" style="text-decoration: none; color: #000;">
    <div class="col mb-3">
      <div class="card h-100">
        <img src="{{recipe.image}}" class="card-img-top" alt="image">
        <div class="card-body">
          <h5 class="card-title">{{recipe.name}}</h5>
-         <a href="{{url_for('recipe', recipe_id=recipe._id)}}" class="btn btn-primary">View</a>
+         
        </div>
      </div>
    </div>
+  </a>
   {% endfor %}
  </div>
 
