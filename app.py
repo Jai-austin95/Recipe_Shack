@@ -49,12 +49,6 @@ def addrecipe():
     categories = mongo.db.Categories.find()
     return render_template("add-recipe.html", categories = categories)
 
-@app.route("/test")
-def test():
-    recipes = mongo.db.recipes.find()
-    print(recipes)
-    return render_template("test.html", recipes = recipes)
-
 @app.route("/insert_recipe", methods=['POST'])
 def insert_recipe():
     recipes = mongo.db.recipes

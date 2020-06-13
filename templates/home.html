@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block title %} Recipe Shack | Home {% endblock %}
 {% block content %}
+<img src="{{url_for('static', filename='images/lunch2.jpg')}}" alt="vegtable_background" style="position: fixed; top: 0; left: 0; min-width: 100%; min-height: 100%; z-index: -1;">
 <!-- jumbotron title card for each section-->
-<div class="jumbotron jumbotron-fluid" style="margin-top: 25vh;">
+<div class="jumbotron jumbotron-fluid" id="title_card" style="margin-top: 25vh;">
   <div class="container">
     <h1 class="display-4">Welcome To Recipe Shack!</h1>
     <p class="lead">We strive to bring users together to share their own recipes and enjoy a real taste of life!</p>
