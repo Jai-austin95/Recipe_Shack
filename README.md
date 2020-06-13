@@ -21,31 +21,31 @@ Here is a link to an early wireframe of my [App.py layout for pages and DB Schem
 
 I also had sketched out a few idea of what I wanted my pages to look like, which I will list below:
 
-[Homepage:](link)
+[Homepage:](https://imgur.com/gallery/NXYeCGv)
 
 The early concept of the homepage had a seperate link on the nav bar for 'editing recipes' but after a meeting with my mentor we decided
 it doesnt need to be that crowded and a simple button on the individual recipe should suffice and be more efficient to code. I also thought about
 having a recently added section using something like a timestamp or value to arrange them to update automaticly, but i ran out of time before being
 able to implement this, so I settled for a clean title page for the home page.
 
-[Catergories Page:](link)
+[Catergories Page:](https://imgur.com/gallery/Oy3eILz)
 
 My catergories page turned out basically as expected on the site, though i did make some changes during development, instead of the entirel
 card being clickable as it is now, they used to all have buttons on them, but after dicussing with my mentor, he suggested to have the card 
 itself as the link as it will look sharper.
 
-[Individual Category Page:](link)
+[Individual Category Page:](https://imgur.com/gallery/Y44h0Fh)
 
 Much like the catergory page, the initial design is pretty much the final outcome visually, I had originally intended the backend code for 
 this to be more stream line and not include as many templates, but by the time i realised this point and spoke to my mentor about it I had 
 run out of realistic time to implement it with full testing, so it has been left as 3 seperate templates. Future ideas to implement would be 
 the addition to create new categories.
 
-[Recipe page](link)
+[Recipe page](https://imgur.com/gallery/4ORvgaz)
 
 The recipe page came out the same as the initial sketch, though with the edition of the 'edit' button and 'delete' function. 
 
-[Add / Edit Recipe page](link)
+[Add / Edit Recipe page](https://imgur.com/gallery/ddsDByA)
 
 Very similar to the sketched wireframe, though there isnt much detail on my original idea in comparison. during development I initially used 
 normal text inputs for the boxes, but they're a hassle to keep scrolling to look what you've typed and the formatting meant that if you switched
