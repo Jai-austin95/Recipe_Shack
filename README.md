@@ -7,6 +7,8 @@ In some eyes like a recipe "facebook" of sorts.
 I wanted the design to be simple and easily navigated, looking sleek and crisp. I'm using bootstrap as a template due to it having a 
 proffesional finish and it saves time while im tackling the newly learnt python arguements.
 
+Here is a link to the Deployed Site: [Recipe Shack](http://recipe-shack.herokuapp.com/home)
+
  
 ## UX
 
